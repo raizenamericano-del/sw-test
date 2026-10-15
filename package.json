@@ -1,0 +1,46 @@
+{
+  "name": "im-status-hub",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Admin-only media library and honest WhatsApp integration status hub.",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "dev": "next dev --hostname 0.0.0.0",
+    "build": "next build",
+    "start": "next start --hostname 0.0.0.0",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate deploy",
+    "db:deploy": "prisma migrate deploy && next start --hostname 0.0.0.0",
+    "retention:cleanup": "tsx scripts/retention-cleanup.ts"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1152.0",
+    "@prisma/client": "6.12.0",
+    "@whiskeysockets/baileys": "7.0.0-rc14",
+    "lucide-react": "^1.57.0",
+    "next": "16.4.1",
+    "pino": "^9.14.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/node": "^20.19.25",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^9.39.1",
+    "globals": "^16.5.0",
+    "prisma": "6.12.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.71.2",
+    "vitest": "4.1.11"
+  }
+}
